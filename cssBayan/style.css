@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #0d0015;
+  color: #fff;
+  position: static;
+}
+
+.line {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #778899;
+}
+
+.accordion {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.accordion__title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.accordion__container {}
+
+.accordion__container:hover .accordion__icon {
+  display: block;
+}
+
+.accordion__container:hover .accordion__name {
+  color: #fff;
+}
+
+.accordion__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accordion__name {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: #778899;
+}
+
+.accordion__name:hover~.accordion__mem {
+  display: block;
+}
+
+.accordion__input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  appearance: none;
+}
+
+.accordion__input:checked~.accordion__mem {
+  display: block;
+  /*   transform: scale(1); */
+}
+
+.accordion__input:checked~.accordion__name {
+  color: #fff;
+}
+
+.accordion__input:checked~.accordion__name .accordion__icon {
+  transform: rotate(180deg);
+}
+
+.accordion__icon {
+  display: none;
+  width: 30px;
+  height: 30px;
+  background-image: url(/cssBayan/cssBayan/img/arrow.svg);
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+}
+
+.accordion__mem {
+  display: none;
+  /*   transform: scale(0); */
+  width: 50%;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
