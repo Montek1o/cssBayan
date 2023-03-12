@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #0d0015;
+  color: #fff;
+  position: static;
+}
+
+.line {
+  display: block;
+  height: 0.1em;
+  width: 100%;
+  background-color: #778899;
+}
+
+.accordion {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.accordion__title {
+  font-size: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.accordion__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accordion__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #778899;
+}
+
+.accordion__button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion__input {
+  width: 0;
+  height: 0;
+  appearance: none;
+}
+
+.accordion__input:checked~.accordion__content .accordion__mem {
+  width: 95%;
+  padding: 1rem;
+}
+
+.accordion__input:checked~.accordion__content .accordion__name {
+  color: #fff;
+}
+
+.accordion__input:checked~.accordion__content .accordion__icon {
+  transform: rotate(180deg);
+  border-top: 0.1rem solid #fff;
+  opacity: 1;
+}
+
+.accordion__name {
+  transition: all 0.5s ease;
+}
+
+.accordion__icon {
+  display: block;
+  opacity: 0.5;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(/cssBayan/cssBayan/img/arrow.svg);
+  background-size: cover;
+  background-position: center;
+  transition: all 0.7s ease;
+}
+
+.accordion__mem {
+  margin: 0 auto;
+  width: 0%;
+  padding: 0rem;
+  transition: all 1s ease;
+}
+
+@media (min-width: 415px) {
+  .accordion {
+    width: 80%;
+  }
+
+  .accordion__title {
+    font-size: 2.3rem;
+  }
+
+  .accordion__content {
+    font-size: 1.3rem;
+  }
+
+  .accordion__input:checked~.accordion__content .accordion__mem {
+    width: 80%;
+  }
+}
+
+@media (min-width: 820px) {
+  .accordion {
+    width: 70%;
+  }
+
+  .accordion__title {
+    font-size: 2.6rem;
+  }
+
+  .accordion__content {
+    font-size: 1.6rem;
+  }
+
+  .accordion__input:checked~.accordion__content .accordion__mem {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1140px) {
+  .accordion {
+    width: 60%;
+  }
+
+  .accordion__title {
+    font-size: 3rem;
+  }
+
+  .accordion__content {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .accordion__icon {
+    display: none;
+    opacity: 1;
+  }
+
+  .accordion__input:checked~.accordion__content .accordion__mem {
+    width: 50%;
+  }
+
+  .accordion__container:hover .accordion__icon {
+    display: block;
+  }
+
+  .accordion__container:hover .accordion__name {
+    color: #fff;
+  }
+
+  .accordion__item:hover .accordion__mem {
+    width: 50%;
+    padding: 1rem;
+  }
+
+  .accordion__item:hover .accordion__icon {
+    transform: rotate(180deg);
+  }
+
+  .accordion__item:active .accordion__content .accordion__name {
+    color: #778899;
+  }
+
+  .accordion__item:active .accordion__content .accordion__icon {
+    opacity: 0.5;
+  }
+
+  .accordion__item:active .accordion__mem {
+    opacity: 0.5;
+  }
+}
